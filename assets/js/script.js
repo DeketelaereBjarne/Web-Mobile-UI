@@ -15,7 +15,6 @@ var processForm=function(e){
 
 };
 
-
 var opslaanItem=function(){
     if((typeof Storage)!==void(0)){
         localStorage.setItem("Orders",JSON.stringify(orders));
@@ -26,8 +25,17 @@ var ophalenItem=function(){
         orders=JSON.parse(localStorage.getItem("Orders"));
     }
 };
+var showAdminPanel=function(){
+    var result="<h2>Overview of orders</h2><ul>";
+    for(var i=0;i<orders.length;i++){
+        result+="<li>"+orders[i].firstname+" "+orders[i].lastname+"<br/>("+orders[i].email+"): "+orders[i].description+"</li>";
+    }
+    result+="</ul>";
+    $("#adminPanel").html(result);
 
+};
 $(document).ready(function(){
     ophalenItem();
     $("#submit").on("click",processForm);
+    $("#admin").on("click",showAdminPanel);
 });
