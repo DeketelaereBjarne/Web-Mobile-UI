@@ -1,7 +1,29 @@
 body{
     background-image:url("../../images/bg.jpg");
-    background-size:89%;
+    line-height:150%;
 }
 h1{
     font-family: 'Pacifico', Arial, Helvetica, sans-serif;
+    color:orange;
+    font-size:2.0rem;
+}
+h1+p{
+    margin-top:10px;
+}
+h2{
+    font-family: 'Pacifico', Arial, Helvetica, sans-serif;
+    color:orange;
+    font-size:1.5rem;
+}
+ul{
+    padding-top:10px;
+    margin-left:30px;
+    list-style-type: circle;
+    padding-bottom:10px;
+}
+input{
+    display:block;
+}
+.container{
+    background-color:#ffffff;
 }
